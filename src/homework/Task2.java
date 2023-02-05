@@ -23,8 +23,7 @@ public class Task2 {
         double operand2 = 10.1;
         char operation = '+';
         double result;
-        result = funOperation1(operand1, operand2, operation);
-        {
+        result = funOperation1(operand1, operand2, operation); {
             System.out.println("Результат: " + result);
         }
     }
