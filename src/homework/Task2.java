@@ -24,25 +24,32 @@ public class Task2 {
         char operation = '+';
         double result;
         result = funOperation1(operand1, operand2, operation); {
-            System.out.println( "Выбрана операция: " + result);
+            System.out.println( "Результат: " + result);
         }
     }
     /*
      * operation char ‘+’, ‘-’, ‘*’, ‘/’, ‘%’
      */
 
-    public static double funOperation1(double value1,
-                                       double value2,
+    public static double funOperation1(double operand1,
+                                       double operand2,
                                        char operation) {
         double result = 0;
         if (operation == '*') {
-            result = value1 * value2;
+            result = operand1 * operand2;
+            System.out.println("Параметры: operand1 = " + operand1 + " operand2 = " + operand2 + " operation = " + operation);
         } else if (operation == '+') {
-            result = value1 / value2;
+            result = operand1 + operand2;
+            System.out.println("Параметры: operand1 = " + operand1 + " operand2 = " + operand2 + " operation = " + operation);
         } else if (operation == '/') {
-            result = value1 / value2;
+            result = operand1 / operand2;
+            System.out.println("Параметры: operand1 = " + operand1 + " operand2 = " + operand2 + " operation = " + operation);
         } else if (operation == '%') {
-            result = value1 % value2;
+            result = operand1 % operand2;
+            System.out.println("Параметры: operand1 = " + operand1 + " operand2 = " + operand2 + " operation = " + operation);
+        } else if (operation == '-') {
+            result = operand1 - operand2;
+            System.out.println("Параметры: operand1 = " + operand1 + " operand2 = " + operand2 + " operation = " + operation);
         } else {
             System.out.println("Ошибка ввода операции " + result);
         }
