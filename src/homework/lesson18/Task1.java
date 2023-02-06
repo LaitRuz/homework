@@ -1,4 +1,4 @@
-package homework;
+package homework.lesson18;
 
 /*
 *  В переменной minutes лежит число от 0 до 59.

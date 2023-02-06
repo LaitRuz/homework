@@ -1,4 +1,4 @@
-package homework;
+package homework.lesson18;
 
 /*
  * Даны 3 переменные:
