@@ -11,12 +11,11 @@ package homework;
 
 public class Task3 {
     public static void main(String[] args) {
-        int sideA = 5;
-        int sideB = 6;
+        int a = 5;
+        int b = 6;
         double square2 = 8.5;
         double square1;
-        char result = 0;
-        square1 = funSquare(sideA, sideB);
+        square1 = getSquare(a, b);
         {
             if (square1 == square2) {
                 System.out.println("Площадь трехугольников равна");
@@ -31,14 +30,9 @@ public class Task3 {
 
     }
 
-    // the function of calculating the area of the first triangle.
-    public static double funSquare(int sideA, int sideB) {
+    // функция вычисления площади 1го треугольника со сторонами a и b.
 
-        double square1;
-        {
-            square1 = 0.5 * sideA + sideB;
-            System.out.println(square1);
-        }
-        return square1;
+    public static double getSquare(int a, int b) {
+        return (a * b) / 2.0;
     }
 }
