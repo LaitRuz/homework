@@ -29,7 +29,7 @@ public class task2 {
 
     private static int getReverseInt(int value) {
         int valueOut = 0;
-        for (int currentValue = value; currentValue != 0; currentValue /= 10){
+        for (int currentValue = value; currentValue != 0; currentValue /= 10) {
             valueOut = valueOut * 10 + currentValue % 10;
         }
 

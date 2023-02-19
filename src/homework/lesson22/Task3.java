@@ -13,8 +13,36 @@ package homework.lesson22;
  */
 
 
+import java.util.Scanner;
+
 public class Task3 {
     public static void main(String[] args) {
+        int startZp = 600;
+        int upZp = 400;
+        int monthEnter = 38;
+        int personalAccount = getPersonalAccount(startZp, upZp, monthEnter);
+        int BrokerAccount = getBrokerAccount(startZp, upZp, monthEnter);
 
+        System.out.println("personal account: " + personalAccount + "$");
+        System.out.println("Broker's account: " + BrokerAccount + "$");
+
+    }
+
+    private static int getBrokerAccount(int startZp, int upZp, int mouthEnter) {
+        int broker = 0;
+        for (int mounthOne = 1; mounthOne != 6; mounthOne++) {
+            broker = (((startZp % 10) %2) + (startZp % 10)) * mounthOne;
+        }
+        return broker;
+    }
+
+    //Вычисление заработка Ивана за 6 месяцев и за (N - месяцев) остатков на счету.
+    private static int getPersonalAccount(int startZp, int upZp, int mouthEnter) {
+        int personal = 0;
+        for (int mounthOne = 1; mounthOne != 6; mounthOne++) {
+            personal = (( startZp - (startZp %10) - 300) * mouthEnter) + ((mouthEnter / 6) * upZp );
+        }
+
+        return personal;
     }
 }
