@@ -13,36 +13,42 @@ package homework.lesson22;
  */
 
 
-import java.util.Scanner;
-
 public class Task3 {
     public static void main(String[] args) {
-        int startZp = 600;
-        int upZp = 400;
+        double startZp = 600;
+        double upZp = 400;
         int monthEnter = 38;
-        int personalAccount = getPersonalAccount(startZp, upZp, monthEnter);
-        int BrokerAccount = getBrokerAccount(startZp, upZp, monthEnter);
-
+        double personalAccount = getPersonalAccount(startZp, upZp, monthEnter);
+        double BrokerAccount = getBrokerAccount(startZp, upZp, monthEnter);
+        // вывод информации в концоль
         System.out.println("personal account: " + personalAccount + "$");
         System.out.println("Broker's account: " + BrokerAccount + "$");
 
     }
 
-    private static int getBrokerAccount(int startZp, int upZp, int mouthEnter) {
-        int broker = 0;
-        for (int mounthOne = 1; mounthOne != 6; mounthOne++) {
-            broker = (((startZp % 10) %2) + (startZp % 10)) * mounthOne;
+    // Расчет брокерского счета с процентной ставкой
+
+    private static double getBrokerAccount(double startZp, double upZp, int monthEnter) {
+        double broker = 0;
+        for (int mouthOne = 1; mouthOne < monthEnter; mouthOne++) {
+            broker = broker + (0.1 * startZp) + 0.02 * broker;
+            if (mouthOne % 6 == 0) {
+                startZp = startZp + upZp;
+            }
         }
         return broker;
     }
 
-    //Вычисление заработка Ивана за 6 месяцев и за (N - месяцев) остатков на счету.
-    private static int getPersonalAccount(int startZp, int upZp, int mouthEnter) {
-        int personal = 0;
-        for (int mounthOne = 1; mounthOne != 6; mounthOne++) {
-            personal = (( startZp - (startZp %10) - 300) * mouthEnter) + ((mouthEnter / 6) * upZp );
-        }
+    // Расчет персонального счета за N - месяцев.
 
+    private static double getPersonalAccount(double startZp, double upZp, int mouthEnter) {
+        double personal = 0;
+        for (int mounthOne = 1; mounthOne < mouthEnter; mounthOne++) {
+            personal = personal + (startZp - (0.1 * startZp) - 300);
+            if (mounthOne % 6 == 0) {
+                personal = personal + upZp;
+            }
+        }
         return personal;
     }
 }
